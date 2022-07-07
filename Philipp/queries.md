@@ -1,7 +1,27 @@
 1. Report:
 
-  **How many rows do we have in each table in the employees database?**
-  
+**How many rows do we have in each table in the employees database?**
+
+  SELECT(
+      SELECT COUNT(*)
+	  FROM   employees
+	  ) AS Total_Employees,
+	  (SELECT COUNT(*)
+	  FROM   departments
+	  ) AS No_Of_Departments,
+	  (SELECT COUNT(*)
+	  FROM   dept_emp
+	  ) AS dept_emp,
+	  (SELECT COUNT(*)
+	  FROM   dept_manager
+	  ) AS Total_Managers,
+	  (SELECT COUNT(*)
+	  FROM   salaries
+	  ) AS No_Of_Salaries,
+	  (SELECT COUNT(*)
+	  FROM   titles
+	  ) AS No_Of_Titles
+  FROM dual
 
 
 2. Report:
