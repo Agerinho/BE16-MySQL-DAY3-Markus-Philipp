@@ -107,19 +107,19 @@ How many employees do we have in the Research Department, who are working for us
 
 How many employees do we have in the Finance Department, who are working for us since 1985 until now and who have salaries higher than EUR 75 000,00 - who are they?
 
-  SELECT COUNT(*) FROM employees
-  WHERE emp_no IN (
-    SELECT emp_no FROM dept_emp WHERE dept_no = (
-        SELECT dept_no from departments
-        WHERE dept_name = 'Finance'
+    SELECT COUNT(*) FROM employees
+    WHERE emp_no IN (
+      SELECT emp_no FROM dept_emp WHERE dept_no = (
+          SELECT dept_no from departments
+          WHERE dept_name = 'Finance'
+        )
       )
-    )
-    AND YEAR(hire_date) >= 1985
-    AND YEAR(hire_date) <= YEAR(CURDATE())
-    AND emp_no IN (
-      SELECT emp_no FROM salaries
-      WHERE salary > 75000    
-    )
+      AND YEAR(hire_date) >= 1985
+      AND YEAR(hire_date) <= YEAR(CURDATE())
+      AND emp_no IN (
+        SELECT emp_no FROM salaries
+        WHERE salary > 75000    
+      )
 
 ### Answer: 8948
 
@@ -127,12 +127,12 @@ How many employees do we have in the Finance Department, who are working for us 
 
 We need a table with employees, who are working for us at this moment: first and last name, date of birth, gender, hire_date, title and salary.
 
-  SELECT first_name, last_name, birth_date, gender, hire_date, titles.title, MAX(salaries.salary) as maxSal
-  FROM employees
-  INNER JOIN titles on employees.emp_no = titles.emp_no
-  INNER JOIN salaries on employees.emp_no = salaries.emp_no
-  GROUP BY employees.emp_no
-  ORDER BY maxSal DESC
+    SELECT first_name, last_name, birth_date, gender, hire_date, titles.title, MAX(salaries.salary) as maxSal
+    FROM employees
+    INNER JOIN titles on employees.emp_no = titles.emp_no
+    INNER JOIN salaries on employees.emp_no = salaries.emp_no
+    GROUP BY employees.emp_no
+    ORDER BY maxSal DESC
 
 
 ## 10. Report:
