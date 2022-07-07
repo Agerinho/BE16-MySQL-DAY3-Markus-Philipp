@@ -26,7 +26,7 @@
 
 2. Report:
 
-  How many employees with the first name "Mark" do we have in our company?
+How many employees with the first name "Mark" do we have in our company?
 
 
 3. Report:
