@@ -127,26 +127,23 @@ How many employees do we have in the Finance Department, who are working for us 
 
 We need a table with employees, who are working for us at this moment: first and last name, date of birth, gender, hire_date, title and salary.
 
-    SELECT first_name, last_name, birth_date, gender, hire_date, titles.title, MAX(salaries.salary) as maxSal
+    SELECT first_name, last_name, birth_date, gender, hire_date, titles.title, salaries.salary as maxSal
     FROM employees
     INNER JOIN titles on employees.emp_no = titles.emp_no
     INNER JOIN salaries on employees.emp_no = salaries.emp_no
-    GROUP BY employees.emp_no
-    ORDER BY maxSal DESC
+    WHERE salaries.to_date >= CURRENT_DATE  
+    ORDER BY salaries.salary DESC
 
 
 ## 10. Report:
 
 We need a table with managers, who are working for us at this moment: first and last name, date of birth, gender, hire_date, title, department name and salary.
 
-
-
-
-Bonus query:
-
- Create a query that will join all tables and show all data from all tables.
-
-
-Next step:
-
- Now you should create at least 5 queries on your own, try to use data from more than 2 tables.
+    SELECT first_name, last_name, birth_date, gender, hire_date, titles.title, departments.dept_name, MAX(salaries.salary) as maxSal
+    FROM employees
+    INNER JOIN titles on employees.emp_no = titles.emp_no
+    INNER JOIN salaries on employees.emp_no = salaries.emp_no
+    INNER JOIN dept_emp on employees.emp_no = dept_emp.emp_no
+    INNER JOIN departments on dept_emp.dept_no = departments.dept_no
+    GROUP BY employees.emp_no
+    ORDER BY maxSal DESC
