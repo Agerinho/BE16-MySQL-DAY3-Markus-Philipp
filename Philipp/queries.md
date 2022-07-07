@@ -99,7 +99,7 @@ How many employees do we have in the Research Department, who are working for us
       WHERE dept_name = 'Research'
       )
     )
-    AND YEAR(hire_date) >= 1992;
+    AND YEAR(hire_date) >= 1992
     AND YEAR(hire_date) <= YEAR(CURDATE())
 
 ### **Answer**: 6145
