@@ -1,4 +1,4 @@
-1. Report:
+## 1. Report:
 
 **How many rows do we have in each table in the employees database?**
 
@@ -23,10 +23,22 @@
       ) AS No_Of_Titles
     FROM dual
 
+Total_Employees
+No_Of_Departments
+dept_emp
+Total_Managers
+No_Of_Salaries
+No_Of_Titles
+300024
+9
+331603
+24
+2844047
+443308
 
 2. Report:
 
-How many employees with the first name "Mark" do we have in our company?
+**How many employees with the first name "Mark" do we have in our company?**
 
 
 3. Report:
