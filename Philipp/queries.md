@@ -42,7 +42,7 @@ How many employees with the first name "Mark" do we have in our company?
 
     SELECT COUNT(*) FROM employees WHERE employees.first_name = 'Mark';
 
-### \_Answer\_: 230
+### **Answer**: 230
 
 
 ## 3. Report:
@@ -52,7 +52,7 @@ How many employees with the first name "Eric" and the last name beginning with "
     SELECT COUNT(*) FROM employees WHERE employees.first_name = 'Eric' AND employees.last_name LIKE 'A%';
 
 
-### \_Answer\_: 13
+### **Answer**: 13
 
 
 ## 4. Report:
@@ -61,7 +61,7 @@ How many employees do we have that are working for us since 1985 and who are the
 
     SELECT COUNT(*) FROM employees WHERE YEAR(hire_date) >= 1985;
 
-### \_Answer\_: 300024
+### **Answer**: 300024
 
     SELECT * FROM employees WHERE YEAR(hire_date) >= 1985;
 
@@ -72,7 +72,7 @@ How many employees got hired from 1990 until 1997 and who are they?
 
     SELECT COUNT(*) FROM employees WHERE YEAR(hire_date) >= 1990 AND YEAR(hire_date) <= 1997;
 
-### \_Answer\_: 129545
+### **Answer**: 129545
 
     SELECT * FROM employees WHERE YEAR(hire_date) >= 1990 AND YEAR(hire_date) <= 1997;
 
@@ -84,7 +84,7 @@ How many employees have salaries higher than EUR 70 000,00 and who are they?
 	    SELECT emp_no FROM salaries WHERE salaries.salary > 70000
     )
 
-### \_Answer\_: 135631
+### **Answer**: 135631
 
 ## 7. Report:
 
@@ -101,7 +101,7 @@ How many employees do we have in the Research Department, who are working for us
     )
     AND YEAR(hire_date) >= 1992;
 
-### \_Answer\_: 6145
+### **Answer**: 6145
 
 ## 8. Report:
 
@@ -121,7 +121,7 @@ How many employees do we have in the Finance Department, who are working for us 
       WHERE salary > 75000    
     )
 
-### \_Answer\_: 8948
+### **Answer**: 8948
 
 ## 9. Report:
 
